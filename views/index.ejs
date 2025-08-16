@@ -57,7 +57,7 @@
                                         <% uploads.forEach(upload => { %>
                                             <% if(upload.target_id == target.id) { %>
                                                 <img src="<%= upload.url %>" alt="Dude I don't care about SEO rn, this is a website for ensign ranch." style="width: 100%; border: 1px #333; border-radius: 4px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-                                                <% teamPoints += target.points %>
+                                                <% teamPoints += target.points; console.log(teamPoints) %>
                                             <% } %>
                                         <% }) %>
                                     </div>
