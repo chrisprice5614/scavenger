@@ -46,10 +46,10 @@
     <main>
         <% rows.forEach((row) => { %>
             <% if (row.url) { %>
-                <div class="slide">
-                    <div class="title"><%= row.title %></div>
-                    <div class="points">Worth <%= row.points %> points</div>
-                    <div class="team">Team: <%= row.team %></div>
+                <div class="slide" style="background: var(--back-<%= row.team %>); color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">
+                    <div class="title" style="color: white;"><%= row.title %></div>
+                    <div class="points" style="color: white;">Worth <%= row.points %> points</div>
+                    <div class="team" style="color: white;">Team: <%= row.team %></div>
                     <img src="<%= row.url %>" alt="Team <%= row.team %> submission">
                 </div>
             <% } %>
@@ -60,9 +60,9 @@
             <div class="title">The Winner is..<br>🥁 Drumroll please... 🥁</div>
         </div>
 
-        <div class="slide">
-            <div class="title">🏆 The Winner 🏆</div>
-            <div class="team">
+        <div class="slide" style="background: var(--back-<%= winner.team %>); color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">
+            <div class="title" style="color: white;">🏆 The Winner 🏆</div>
+            <div class="team" style="color: white;">
                 Team <strong><%= winner.team %></strong> with <%= winner.points %> points!
             </div>
             <% if (winner.url) { %>

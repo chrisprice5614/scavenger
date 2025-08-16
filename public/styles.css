@@ -10,7 +10,7 @@
     --back-orange:linear-gradient(90deg,rgba(180, 123, 58, 1) 0%, rgba(224, 148, 67, 1) 21%, rgba(222, 133, 44, 1) 37%, rgba(227, 185, 102, 1) 66%, rgba(252, 176, 69, 1) 100%);
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -26,6 +26,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body{
     background-color: var(--color-light);
+}
+
+strong {
+  font-weight: bold;
 }
 
 
