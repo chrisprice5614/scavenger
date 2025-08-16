@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <%- include("includes/head") %>
+    <style>
+        body { 
+            text-align: center; 
+            font-family: sans-serif; 
+        }
+        .slide { display: none; }
+        .slide img { 
+            max-width: 80%; 
+            max-height: 700px; 
+            margin-top: 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .title { font-size: 2em; margin: 10px; }
+        .points { font-size: 1.2em; margin: 5px; }
+        .team { font-size: 1.5em; margin: 15px; }
+        .nav-buttons {
+            margin: 30px;
+        }
+        button { 
+            margin: 0 10px; 
+            padding: 12px 24px; 
+            font-size: 1.2em; 
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #0077cc;
+            color: white;
+        }
+        button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <%- include("includes/header") %>
+    </header>
+    <main>
+        <% rows.forEach((row) => { %>
+            <% if (row.url) { %>
+                <div class="slide">
+                    <div class="title"><%= row.title %></div>
+                    <div class="points">Worth <%= row.points %> points</div>
+                    <div class="team">Team: <%= row.team %></div>
+                    <img src="<%= row.url %>" alt="Team <%= row.team %> submission">
+                </div>
+            <% } %>
+        <% }) %>
+
+        <!-- Special ending slides -->
+        <div class="slide">
+            <div class="title">The Winner is..<br>🥁 Drumroll please... 🥁</div>
+        </div>
+
+        <div class="slide">
+            <div class="title">🏆 The Winner 🏆</div>
+            <div class="team">
+                Team <strong><%= winner.team %></strong> with <%= winner.points %> points!
+            </div>
+            <% if (winner.url) { %>
+                <img src="<%= winner.url %>" alt="Winning Team">
+            <% } %>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="prevBtn" onclick="prevSlide()">⟵ Previous</button>
+            <button id="nextBtn" onclick="nextSlide()">Next ⟶</button>
+        </div>
+    </main>
+    <footer>
+        <%- include("includes/footer") %>
+    </footer>
+
+    <script>
+        let slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach(s => s.style.display = 'none');
+            slides[index].style.display = 'block';
+
+            // Disable prev button if on first slide
+            document.getElementById("prevBtn").disabled = index === 0;
+            // Disable next button if on last slide
+            document.getElementById("nextBtn").disabled = index === slides.length - 1;
+        }
+
+        function nextSlide() {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                showSlide(currentIndex);
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showSlide(currentIndex);
+            }
+        }
+
+        // Show the first slide at start
+        showSlide(currentIndex);
+    </script>
+</body>
+</html>

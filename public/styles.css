@@ -1,0 +1,65 @@
+:root{
+    --color-dark: #0d0e0d;
+    --color-light: #eef6ee;
+    --color-gray: #565956;
+    --color-active: #389238;
+    --back-blue: linear-gradient(171deg,rgba(42, 155, 146, 1) 0%, rgba(53, 196, 182, 1) 38%, rgba(29, 209, 222, 1) 73%, rgba(144, 201, 232, 1) 100%);
+    --back-green: linear-gradient(139deg,rgba(56, 166, 31, 1) 0%, rgba(100, 209, 146, 1) 38%, rgba(74, 207, 101, 1) 71%, rgba(93, 237, 83, 1) 100%);
+    --back-yellow: linear-gradient(268deg,rgba(222, 202, 71, 1) 0%, rgba(232, 226, 53, 1) 35%, rgba(212, 230, 78, 1) 67%, rgba(217, 193, 61, 1) 100%);
+    --back-red: radial-gradient(circle,rgba(222, 98, 137, 1) 0%, rgba(224, 31, 31, 1) 50%, rgba(217, 118, 95, 1) 100%);
+    --back-orange:linear-gradient(90deg,rgba(180, 123, 58, 1) 0%, rgba(224, 148, 67, 1) 21%, rgba(222, 133, 44, 1) 37%, rgba(227, 185, 102, 1) 66%, rgba(252, 176, 69, 1) 100%);
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4em;
+    color: var(--color-dark);
+}
+
+body{
+    background-color: var(--color-light);
+}
+
+
+label{
+    margin-top: 32px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+input, select{
+    padding: 8px;
+    border: solid 2px var(--color-gray);
+    border-radius: 6px;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3), inset -2px -2px 4px rgba(255,255,255,0.3);
+    width: 100%;
+}
+
+input:hover, input:focus, select:hover, select:focus{
+    border: solid 2px var(--color-active);
+}
+
+button{
+    padding: 9px 18px;
+    border-radius: 6px;
+    border: 2px solid var(--color-dark);
+    box-shadow: inset -2px -2px 2px rgba(0,0,0,0.3), inset 2px 2px 2px rgba(255,255,255,0.3);
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #bddecc, #acd5ce, #a4c3b4);
+}
+
+a{
+    color: var(--color-active);
+    text-decoration: underline;
+    text-decoration-color: var(--color-active);
+    padding: 6px;
+}

@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <%- include("includes/head") %>
+</head>
+<body style="background: var(--back-<%= team %>)">
+    <header>
+        <div style="background-color: #fff; padding: 4px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+            <%- include("includes/header") %>
+        </div>
+    </header>
+    <main>
+       <div>
+            <div style="padding: 6px;">
+                <br>
+                <div style="background-color: #fff; padding: 4px; border-radius: 6px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                    <br>
+                    <h1 style="text-align: center;"><%= target.title %></h1>
+                    <br>
+                    <p style="text-align: center;">Worth: <%= target.points %> <% if(target.points > 1) { %> points <% } else { %> point <% } %></p>
+                    <br>
+                    <br>
+                    <form action="/upload/<%= team %>/<%= targetid %>" method="POST" enctype="multipart/form-data">
+                        <input type="file" accept="image/*" name="file" required>
+                        <br>
+                        <br>
+                        <div style="text-align: center;">
+                            <button>Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+       </div>
+    </main>
+    <footer>
+        <%- include("includes/footer") %>
+    </footer>
+</body>
+</html>

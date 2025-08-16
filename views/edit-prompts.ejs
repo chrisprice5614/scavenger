@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <%- include("includes/head") %>
+</head>
+<body>
+    <header>
+        <%- include("includes/header") %>
+    </header>
+    <main>
+       <div style="padding: 12px;">
+            <br>
+            <h1 style="text-align: center;">Edit Prompts</h1>
+            <br>
+            <br>
+            <% prompts.forEach(prompt => { %>
+                <div style="display: grid; grid-template-columns: 4fr 1fr;">
+                    <div>
+                        <div style="padding: 4px">
+                            <p><%= prompt.title %></p>
+                            <br>
+                            <p>Worth <%= prompt.points %></p>
+                        </div>
+                    </div>
+                    <div>
+                        <button onclick="window.location='/delete-prompt/<%= prompt.id %>'">X</button>
+                    </div>
+                </div>
+            <% }) %>
+            <br>
+            <br>
+            <form action="/add-prompt" method="POST">
+                <label for="prompt">Prompt</label>
+                <input type="text" name="prompt" id="prompt" placeholder="prompt" required>
+                <br>
+                <br>
+                <label for="points">Points</label>
+                <input type="number" name="points" step="1" min="0" required value="1">
+                <br>
+                <br>
+                <div style="text-align: center;">
+                    <button>Add Prompt</button>
+                </div>
+            </form>
+       </div>
+    </main>
+    <footer>
+        <%- include("includes/footer") %>
+    </footer>
+</body>
+</html>

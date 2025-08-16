@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <%- include("includes/head") %>
+</head>
+<body>
+    <header>
+        <%- include("includes/header") %>
+    </header>
+    <main>
+        <br>
+        <h1 style="text-align: center;">Ensign Ranch Scavenger Hunt</h1>
+        <br>
+        <div style="text-align: center;">
+            <% if(!user) { %>
+                <button onclick="window.location='/login'">Login</button>
+            <% } else { %>
+                <% if(admin) { %>
+                    <h2 style="text-align: center;">Hello, Chris</h2>
+                    <br>
+                    <br>
+                    <button onclick="window.location='/edit-prompts'">Edit Prompts</button>
+                    <br>
+                    <br>
+                    <button onclick="window.location='/slideshow'">Slideshow</button>
+                    <br>
+                    <br>
+                    <button onclick="window.location='/clear'">Clear Uploaded Photos</button>
+                    <br>
+                    <br>
+                    <div style="text-align: left; padding: 4px;">
+                        <p>Green Team: greengiant</p>
+                        <p>Yellow Team: yellowjacket</p>
+                        <p>Blue Team: bluemoon</p>
+                        <p>Red Team: redrover</p>
+                        <p>Orange Team: norhyme</p>
+                    </div>
+                <% } else { %>
+                    <h1>Hello <%= team %> member!</h1>
+                    <br>
+                    <p>Points: <span id="teamPoints"></span>/<%= maxPoints %></p>
+                    <% teamPoints = 0; %>
+                    <br>
+                    <div style="background: var(--back-<%= team %>)">
+                        <br>
+                        <% targets.forEach(target=> { %>
+                            <div style="margin: 12px; padding: 12px; background-color: #fff; border-radius: 6px; box-shadow: 2px 2px 4px rgba(0,0,0,0.2); text-align: left;">
+                                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; column-gap: 6px;">
+                                    <div>
+                                        <h3><%= target.title %></h3>
+                                        <p>Worth: <%= target.points %> <% if(target.points > 1) { %> points <% } else { %> point <% } %></p>
+                                        <br>
+                                    </div>
+                                    <div>
+                                        <% uploads.forEach(upload => { %>
+                                            <% if(upload.target_id == target.id) { %>
+                                                <img src="<%= upload.url %>" alt="Dude I don't care about SEO rn, this is a website for ensign ranch." style="width: 100%; border: 1px #333; border-radius: 4px; box-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                                                <% teamPoints += target.points %>
+                                            <% } %>
+                                        <% }) %>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <button onclick="window.location='/upload/<%= team %>/<%= target.id %>'">Upload</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                const pointText = document.getElementById("teamPoints")
+                                pointText.innerHTML = <%= teamPoints %>;
+                            </script>
+                        <% }) %>
+                        <br>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+       
+    </main>
+    <footer>
+        <%- include("includes/footer") %>
+    </footer>
+</body>
+</html>

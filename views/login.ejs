@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <%- include("includes/head") %>
+</head>
+<body>
+    <header>
+        <%- include("includes/header") %>
+    </header>
+    <main>
+        <div style="padding: 12px;">
+            <form action="/login" method="POST">
+                <br>
+                <div>
+                    <% errors.forEach(error => { %>
+                        <div style="padding: 8px; border-radius: 6px; border: solid 2px #F00;">
+                            <p><%= error %></p>
+                        </div>
+                    <% }) %>
+                </div>
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" required autocomplete="off" autocapitalize="off" autocorrect="off">
+                <br>
+                <br>
+                <div style="text-align: center;">
+                    <button>Login</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <%- include("includes/footer") %>
+    </footer>
+</body>
+</html>
