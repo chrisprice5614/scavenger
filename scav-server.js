@@ -19,7 +19,7 @@ const createTables = db.transaction(() => {
         `
         CREATE TABLE IF NOT EXISTS targets (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title STRING
+        title STRING,
         points INTEGER
         )
         `

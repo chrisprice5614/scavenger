@@ -66,13 +66,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <script>
-                                const pointText = document.getElementById("teamPoints")
-                                pointText.innerHTML = <%= teamPoints %>;
-                            </script>
+                            
                         <% }) %>
                         <br>
                     </div>
+                    <script>
+                                const pointText = document.getElementById("teamPoints")
+                                pointText.innerHTML = <%= teamPoints %>;
+                            </script>
                 <% } %>
             <% } %>
         </div>
