@@ -177,6 +177,26 @@ app.post("/login", (req,res) => {
         team = "orange";
     }
 
+    if(password == "barbie"){
+        loggedIn = true;
+        team = "pink";
+    }
+
+    if(password == "andgold"){
+        loggedIn = true;
+        team = "silver";
+    }
+
+    if(password == "medal"){
+        loggedIn = true;
+        team = "gold";
+    }
+
+    if(password == "plates"){
+        loggedIn = true;
+        team = "purple";
+    }
+
 
 
     if(!loggedIn)

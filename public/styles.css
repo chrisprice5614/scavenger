@@ -8,6 +8,10 @@
     --back-yellow: linear-gradient(268deg,rgba(222, 202, 71, 1) 0%, rgba(232, 226, 53, 1) 35%, rgba(212, 230, 78, 1) 67%, rgba(217, 193, 61, 1) 100%);
     --back-red: radial-gradient(circle,rgba(222, 98, 137, 1) 0%, rgba(224, 31, 31, 1) 50%, rgba(217, 118, 95, 1) 100%);
     --back-orange:linear-gradient(90deg,rgba(180, 123, 58, 1) 0%, rgba(224, 148, 67, 1) 21%, rgba(222, 133, 44, 1) 37%, rgba(227, 185, 102, 1) 66%, rgba(252, 176, 69, 1) 100%);
+    --back-pink: linear-gradient(292deg,rgba(235, 145, 203, 1) 0%, rgba(215, 90, 237, 1) 37%, rgba(230, 101, 223, 1) 66%, rgba(216, 175, 222, 1) 100%);
+    --back-silver: linear-gradient(159deg,rgba(213, 227, 219, 1) 0%, rgba(200, 222, 221, 1) 37%, rgba(223, 232, 232, 1) 66%, rgba(187, 201, 200, 1) 100%);
+    --back-gold: linear-gradient(159deg,rgba(204, 204, 149, 1) 0%, rgba(237, 211, 133, 1) 37%, rgba(237, 215, 133, 1) 66%, rgba(209, 198, 171, 1) 100%);
+    --back-purple: linear-gradient(101deg,rgba(160, 63, 251, 1) 0%, rgba(164, 129, 214, 1) 46%, rgba(122, 70, 252, 1) 100%);
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
